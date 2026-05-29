@@ -16,9 +16,9 @@ typedef enum {
 	NUMERICAL,
 	PROBABILITY,
 	SOLVER,
-	STATS
+	STATS,
+	SETTINGS
 } AppList;
-
 
 void Apps_StartApp(AppList app);
 

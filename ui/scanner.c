@@ -35,6 +35,7 @@ char Scanner_mapKey(unsigned int keyCode)
 	case KEY_CHAR_PLUS: return '+';
 	case KEY_CHAR_MINUS: return '-';
 	case KEY_CTRL_DEL: return 'Y';
+	case KEY_CTRL_EXE: return 'A';
 	default: return 'Z';
 	}
 }

@@ -19,6 +19,9 @@ void Printer_setCoordinates(int x, int y);
 void Printer_print(const char* insputString);
 void Printer_printLine(const char* inputString);
 
+void Printer_clearLine(int line);
+void Printer_clearLineDefault();
+
 void Printer_newLine();
 
 void Printer_spot(int x, int y, char character);

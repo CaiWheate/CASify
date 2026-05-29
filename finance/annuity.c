@@ -84,9 +84,13 @@ float Annuity_solveFutureValue()
 {
 	char buffer[16];
 
-	Printer_printLine("Periodic Payment?");
+	Printer_print("Periodic Payment?");
 	Scanner_getString(buffer, 16);
 	float periodicPayment = stringToFloat(buffer);
+
+	Printer_clearLine(6);
+
+	Sleep(10000);
 }
 float Annuity_solvePeriodicPayment()
 {

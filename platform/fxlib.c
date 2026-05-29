@@ -44,32 +44,61 @@ void GetKey(unsigned int* keyCode)
 	// Convert char to calculator character as defined in keybios.h.
 	switch (key)
 	{
-		case 'y': *keyCode = KEY_CTRL_F1; break;
-		case 'u': *keyCode = KEY_CTRL_F2; break;
-		case 'i': *keyCode = KEY_CTRL_F3; break;
-		case 'o': *keyCode = KEY_CTRL_F4; break;
-		case 'p': *keyCode = KEY_CTRL_F5; break;
-		case 'k': *keyCode = KEY_CHAR_K; break;
-		case 'm': *keyCode = KEY_CHAR_M; break;
-		case '0': *keyCode = KEY_CHAR_0; break;
-		case '1': *keyCode = KEY_CHAR_1; break;
-		case '2': *keyCode = KEY_CHAR_2; break;
-		case '3': *keyCode = KEY_CHAR_3; break;
-		case '4': *keyCode = KEY_CHAR_4; break;
-		case '5': *keyCode = KEY_CHAR_5; break;
-		case '6': *keyCode = KEY_CHAR_6; break;
-		case '7': *keyCode = KEY_CHAR_7; break;
-		case '8': *keyCode = KEY_CHAR_8; break;
-		case '9': *keyCode = KEY_CHAR_9; break;
-		case 's': *keyCode = KEY_CHAR_S; break;
-		case 'c': *keyCode = KEY_CHAR_C; break;
-		case 't': *keyCode = KEY_CHAR_T; break;
-		case 'x': *keyCode = KEY_CHAR_X; break;
-		case '(': *keyCode = KEY_CHAR_LPAR; break;
-		case ')': *keyCode = KEY_CHAR_RPAR; break;
-		case '+': *keyCode = KEY_CHAR_PLUS; break;
-		case '-': *keyCode = KEY_CHAR_MINUS; break;
-		case 'd': *keyCode = KEY_CTRL_DEL; break; // Replace DELETE key with D key.
-		default: *keyCode = KEY_CHAR_Z; break;
+		case 'y': *keyCode = KEY_CTRL_F1; 
+			break;
+		case 'u': *keyCode = KEY_CTRL_F2; 
+			break;
+		case 'i': *keyCode = KEY_CTRL_F3; 
+			break;
+		case 'o': *keyCode = KEY_CTRL_F4; 
+			break;
+		case 'p': *keyCode = KEY_CTRL_F5; 
+			break;
+		case 'k': *keyCode = KEY_CHAR_K; 
+			break;
+		case 'm': *keyCode = KEY_CHAR_M; 
+			break;
+		case '0': *keyCode = KEY_CHAR_0; 
+			break;
+		case '1': *keyCode = KEY_CHAR_1; 
+			break;
+		case '2': *keyCode = KEY_CHAR_2; 
+			break;
+		case '3': *keyCode = KEY_CHAR_3; 
+			break;
+		case '4': *keyCode = KEY_CHAR_4; 
+			break;
+		case '5': *keyCode = KEY_CHAR_5; 
+			break;
+		case '6': *keyCode = KEY_CHAR_6; 
+			break;
+		case '7': *keyCode = KEY_CHAR_7; 
+			break;
+		case '8': *keyCode = KEY_CHAR_8; 
+			break;
+		case '9': *keyCode = KEY_CHAR_9; 
+			break;
+		case 's': *keyCode = KEY_CHAR_S; 
+			break;
+		case 'c': *keyCode = KEY_CHAR_C; 
+			break;
+		case 't': *keyCode = KEY_CHAR_T; 
+			break;
+		case 'x': *keyCode = KEY_CHAR_X; 
+			break;
+		case '(': *keyCode = KEY_CHAR_LPAR; 
+			break;
+		case ')': *keyCode = KEY_CHAR_RPAR; 
+			break;
+		case '+': *keyCode = KEY_CHAR_PLUS; 
+			break;
+		case '-': *keyCode = KEY_CHAR_MINUS; 
+			break;
+		case 'd': *keyCode = KEY_CTRL_DEL; 
+			break; // Replace DELETE key with D key.
+		case 'a': *keyCode = KEY_CTRL_EXE; 
+			break;
+		default: *keyCode = KEY_CHAR_Z; 
+			break;
 	}
 }

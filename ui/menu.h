@@ -5,18 +5,17 @@
 
 typedef struct
 {
-	int selectedIndex;
-	
-	int itemCount;
-	const char* items[]; // Pointer to an array of strings.
+    int selectedIndex;
+    int itemCount;
+    const char** items;
 } Menu;
 
-void Menu_goUp(Menu* menu);
-void Menu_goDown(Menu* menu);
+void Menu_goUp();
+void Menu_goDown();
 
-void Menu_selectItem(Menu* menu, int option);
+void Menu_selectItem(int option);
 
-void Menu_render(Menu* menu);
+void Menu_render();
 
 void Menu_startMenu();
 

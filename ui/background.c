@@ -24,8 +24,6 @@ void Background_stopBackground()
 
 void Background_setBackgroundStatus(UIMode uimode)
 {
-	uiMode = uimode;
-
 	if (uimode == UIMODE_BORDERED)
 	{
 		offsetX = 1;
@@ -41,7 +39,12 @@ void Background_setBackgroundStatus(UIMode uimode)
 
 		displayAreaWidth = SCREEN_WIDTH;
 		displayAreaHeight = SCREEN_HEIGHT;
+
+		// Clear entire screen and then we should render menu again.
+		Bdisp_AllClr_DDVRAM();
 	}
+
+	uiMode = uimode; // Save variable
 }
 void Background_setBackgroundStyle(UIStyle uistyle)
 {
@@ -81,7 +84,7 @@ void Background_render()
 {
 	int y;
 
-	if (uiMode == UIMODE_FULLSCREEN) // Return is background is deactivated.
+	if (uiMode == UIMODE_FULLSCREEN) // Return if background is deactivated.
 	{
 		return;
 	}

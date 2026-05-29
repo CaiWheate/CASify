@@ -1,57 +1,61 @@
 #include "apps.h"
 
-#include "cas_app.h"
-#include "complex_app.h"
-#include "constants_app.h"
-#include "conversion_app.h"
-#include "finance_app.h"
-#include "formula_app.h"
-#include "geometry_app.h"
-#include "linearalgebra_app.h"
-#include "numerical_app.h"
-#include "probability_app.h"
-#include "solver_app.h"
-#include "stats_app.h"
+#include "../cas/cas.h"
+#include "../complex/complex.h"
+#include "../constants/constants.h"
+#include "../conversion/conversion.h"
+#include "../finance/finance.h"
+#include "../formula/formula.h"
+#include "../geometry/geometry.h"
+#include "../linearalgebra/linear_algebra.h"
+#include "../numerical/numerical.h"
+#include "../probability/probability.h"
+#include "../solver/solver.h"
+#include "../stats/stats.h"
+#include "../settings/settings.h"
 
 void Apps_StartApp(AppList app)
 {
 	switch (app)
 	{
 	case CAS:
-		Cas_App_Start();
+		CAS_startCasSystem();
 		break;
 	case COMPLEX:
-		Complex_App_Start();
+		Complex_startComplexSystem();
 		break;
 	case CONSTANTS:
-		Constants_App_Start();
+		Constants_startConstantsSystem();
 		break;
 	case CONVERSION:
-		Conversion_App_Start();
+		Conversion_startConversionSystem();
 		break;
 	case FINANCE:
-		Finance_App_Start();
+		Finance_startFinanceSystem();
 		break;
 	case FORMULA:
-		Formula_App_Start();
+		Formula_startFormulaSystem();
 		break;
 	case GEOMETRY:
-		Geometry_App_Start();
+		Geometry_startGeometrySystem();
 		break;
 	case LINEARALGEBRA:
-		LinearAlgebra_App_Start();
+		LinearAlgebra_startLinearAlgebraSystem();
 		break;
 	case NUMERICAL:
-		Numerical_App_Start();
+		Numerical_startNumericalSystem();
 		break;
 	case PROBABILITY:
-		Probability_App_Start();
+		Probability_startProbabilitySystem();
 		break;
 	case SOLVER:
-		Solver_App_Start();
+		Solver_startSolverSystem();
 		break;
 	case STATS:
-		Stats_App_Start();
+		//Stats_startStatsSystem();
+		break;
+	case SETTINGS:
+		Settings_startSettingsSystem();
 		break;
 	}
 }

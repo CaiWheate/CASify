@@ -23,7 +23,6 @@ void Printer_setup(int x, int y)
 	}
 	
 	locate(printer.x, printer.y);
-	return printer;
 }
 void Printer_setupDefault()
 {
@@ -39,8 +38,6 @@ void Printer_setupDefault()
 	}
 
 	locate(printer.x, printer.y);
-	Bdisp_AllClr_DDVRAM();
-	return printer;
 }
 
 int Printer_getXCoordinate()
@@ -87,6 +84,39 @@ void Printer_printLine(const char* inputString)
 	printer.y += 1;
 }
 
+void Printer_clearLine(int line)
+{
+	int x = printer.x;
+	int y = printer.y;
+
+	int i;
+
+	locate(Background_getOffsetX() + 1, Background_getOffsetY() + line);
+
+	for (i = 0; i < Background_getDisplayAreaWidth(); i++)
+	{
+		Print((unsigned char*)" ");
+	}
+
+	locate(x, y);
+}
+void Printer_clearLineDefault()
+{
+	int x = printer.x;
+	int y = printer.y;
+
+	int i;
+
+	locate(Background_getOffsetX() + 1, printer.y);
+
+	for (i = 0; i < Background_getDisplayAreaWidth(); i++)
+	{
+		Print((unsigned char*)" ");
+	}
+
+	locate(x, y);
+}
+
 void Printer_newLine()
 {
 	printer.x = 1 + Background_getOffsetX();
@@ -112,12 +142,18 @@ void Printer_spotDefault(int x, int y)
 
 void Printer_clearScreen()
 {
-	int originalX = 0;
-	int originalY = 0;
+	int width = Background_getDisplayAreaWidth();
+	int height = Background_getDisplayAreaHeight();
 
-	for (int y = Background_getOffsetY() + 1; y < Background_getDisplayAreaHeight() + (Background_getOffsetY() * 2); y++) // For each row.
+	int startX = (21 - width) / 2 + 1;
+	int startY = (8 - height) / 2 + 1;
+
+	int endX = startX + width;
+	int endY = startY + height;
+
+	for (int y = startY; y < endY; y++)
 	{
-		for (int x = 1 + Background_getOffsetX(); x < Background_getDisplayAreaWidth() + (Background_getOffsetX() * 2); x++) // For each character in row.
+		for (int x = startX; x < endX; x++)
 		{
 			locate(x, y);
 			Print(" ");
